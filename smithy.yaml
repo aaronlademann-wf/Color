@@ -1,0 +1,18 @@
+project: dart
+language: dart
+
+# Dart 1.21.1 image from https://github.com/Workiva/smithy-runner-dart/
+runner_image: drydock-prod.workiva.net/workiva/smithy-runner-dart:119662
+
+before_script:
+  - pub get
+
+script:
+  - dart test/color_test.dart
+  - tar czf color.pub.tgz LICENSE README.md pubspec.yaml lib/
+
+artifacts:
+  build:
+    - ./pubspec.lock
+  pub:
+    - ./color.pub.tgz
