@@ -15,4 +15,4 @@ artifacts:
   build:
     - ./pubspec.lock
   pub:
-    - ./sauce_unit_test_runner.pub.tgz
+    - ./color.pub.tgz
